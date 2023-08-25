@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat&family=M+PLUS+Rounded+1c&family=Oswald&family=Satisfy&family=Special+Elite&display=swap"
+    rel="stylesheet">
+
+  <link rel="icon"
+    href="https://cdn3.iconfinder.com/data/icons/editor-16/500/yul609_14_editor_bulb_idea_business_computer_hand_office-256.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+
+    /* Zigzag czz */
+
+    .zigZag {
+      padding: 64px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both
+    }
+
+    .C66 {
+      float: left;
+      width: 66.66666%;
+      padding: 20px;
+    }
+
+    .C33 {
+      float: left;
+      width: 33.33333%;
+      padding: 20px;
+    }
+
+    .large-font {
+      font-size: 48px;
+    }
+
+    .xlarge-font {
+      font-size: 64px
+    }
+
+    .button {
+      border: none;
+      color: white;
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #04AA6D;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      border-radius: 25px;
+    }
+
+    @media screen and (max-width: 700px) {
+
+      .C66,
+      .C33 {
+        width: 100%;
+        text-align: center;
+      }
+
+      img {
+        margin: auto;
+      }
+    }
+
+    .header {
+      background-color: #f1f1f1;
+      padding: 30px;
+      text-align: center;
+    }
+
+    #navbar {
+      overflow: hidden;
+      background-color: rgb(34, 34, 34);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #navbar a {
+      color: #f2f2f2;
+      padding: 13px 12px;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    #navbar a:hover {
+      background-color: rgb(250, 244, 235);
+      color: black;
+      border-radius: 18px;
+    }
+
+    .cnt {
+      padding: 16px;
+    }
+
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .sticky+.content {
+      padding-top: 60px;
+    }
+
+
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+
+
+    .bg-image {
+      margin-top: 40px;
+      filter: blur(8px);
+      background-image: url(https://cdn2.hubspot.net/hubfs/145335/best-about-us-pages.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+    }
+
+
+    .bg-text {
+      margin-top: 40px;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+      color: white;
+      font-weight: bold;
+      border: 3px solid #f1f1f1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 80%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      height: 25%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+      margin: 8px;
+    }
+
+    .p1 {
+      text-align: center;
+      font-size: 3rem;
+      color: rgb(59, 54, 54);
+      text-shadow: 2px -2px 2px red;
+      text-decoration: underline;
+      padding: 5px;
+
+    }
+
+    .row {
+      margin-top: 100px;
+    }
+
+    .cont {
+      padding: 0 16px;
+    }
+
+    .cont::after,
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+
+    h6 {
+      text-decoration: 3px red dashed underline;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    h6:hover {
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      background-color: antiquewhite;
+      color: blue;
+    }
+
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100vw;
+        height: 24vh;
+        overflow: hidden;
+        display: inline-flex;
+
+      }
+
+      .card {
+        width: 100vw;
+        margin-bottom: 55px;
+      }
+
+      p,
+      h3,
+      h6 {
+        padding: 0;
+        font-size: small;
+      }
+
+      img {
+        width: 44%;
+        height: 155px;
+      }
+
+      .bg-image {
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+
+
+    .col {
+      float: left;
+      width: 25%;
+      padding: 0 5px;
+    }
+
+    .row1 {
+      margin: 0 -5px;
+    }
+
+
+    .row1:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    @media screen and (max-width: 600px) {
+      .col {
+
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+
+
+    .facard {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: #444;
+      color: white;
+      border-radius: 6px;
+    }
+
+    .facard:hover {
+      box-shadow: -8px -8px rgb(255, 116, 116);
+      padding: 20px;
+      transition: all 0.6s;
+    }
+
+
+    .fa {
+      font-size: 50px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .fa:hover {
+      color: rgb(236, 159, 16);
+    }
+
+    .checked {
+      color: orange;
+
+    }
+
+
+    .fa {
+      font-size: 1.8rem;
+    }
+
+    .colm {
+      float: left;
+      width: 25%;
+      padding: 0 10px;
+      margin-top: 440px;
+
+    }
+
+
+    .row2 {
+      margin: 0 -5px;
+      background-image: url(https://wallpaperaccess.com/full/1691795.jpg);
+      background-size: auto;
+      min-height: 100vh;
+
+    }
+
+
+    .row2:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    @media screen and (max-width: 550px) {
+      .colm {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+
+
+    .card2 {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+      padding: 16px;
+      height: 230px;
+      text-align: center;
+      background-color: #f1f1f1;
+      border-radius: 16px 50px;
+    }
+
+    .card2:hover {
+      animation: shake 1s;
+      animation-iteration-count: 5;
+    }
+
+
+
+    @keyframes shake {
+      0% {
+        transform: translate(1px, 1px) rotate(0deg);
+        box-shadow: -4px -4px rgb(140, 247, 247);
+      }
+
+      10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+        box-shadow: 4px 4px rgb(31, 102, 255);
+      }
+
+      30% {
+        transform: translate(3px, 2px) rotate(0deg);
+        box-shadow: 4px 4px rgb(140, 247, 247);
+      }
+
+      50% {
+        transform: translate(1px, -1px) rotate(1deg);
+        box-shadow: -4px -4px rgb(123, 255, 46);
+      }
+
+      80% {
+        transform: translate(1px, -1px) rotate(1deg);
+        box-shadow: 4px 4px rgb(140, 247, 247);
+      }
+
+      100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+        box-shadow: -4px -4px rgb(250, 38, 222);
+      }
+    }
+
+    .colm:nth-child(even) {
+      margin-top: 500px;
+    }
+
+    .rate {
+      text-align: center;
+    }
+
+    h3 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+
+
+    .t1 {
+      font-family: 'Special Elite', cursive;
+    }
+
+
+
+    .txt {
+      font-family: 'Satisfy', cursive;
+      font-size: 1.1rem;
+      border-left: 5px solid rgb(61, 152, 255);
+      height: 85px;
+      margin-top: 0;
+      padding: 6px;
+      position: relative;
+      background: linear-gradient(180deg, transparent, #a6f5f9);
+    }
+
+
+    ::selection {
+      color: red;
+      background: rgb(252, 252, 135);
+    }
+
+
+    .cpyri8 {
+      text-align: center;
+      padding: 10px;
+      font-size: 1.1rem;
+      background: linear-gradient(180deg, transparent, #bfff99);
+    }
+
+
+    .pp {
+      font-size: 1rem;
+    }
+
+
+    h4 {
+      text-align: center;
+    }
+
+
+    .topBtn {
+      text-decoration: none;
+      color: whitesmoke;
+      font-size: 1.2rem;
+    }
+
+    .topBtn:hover {
+      padding: 8px;
+      color: rgb(255, 171, 61);
+    }
+
+    .card2 i {
+      text-decoration: underline;
+      padding: 3px;
+    }
+
+    .ylw {
+      background-color: rgb(255, 255, 129);
+      height: 100px;
+      width: 100%;
+    }
+
+
+
+    /* Timeline css */
+    .timeline {
+      position: relative;
+      min-width: 100vw;
+      margin-top:460px;
+      background-color: gray;
+    }
+
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 7px;
+      background-color: rgb(49, 53, 236);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+
+    .container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
+      border: 4px solid orange;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+
+    .left {
+      left: 0;
+    }
+
+
+    .right {
+      left: 50%;
+    }
+
+
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 21px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+
+
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 21px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+
+    .right::after {
+      left: -16px;
+    }
+
+    .content {
+      padding: 20px 30px;
+      background-color: whitesmoke;
+      position: relative;
+      border-radius: 6px;
+    }
+
+
+    @media screen and (max-width: 600px) {
+
+      .timeline::after {
+        left: 31px;
+      }
+
+
+      .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+
+      .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+
+      .left::after,
+      .right::after {
+        left: 15px;
+      }
+
+
+      .right {
+        left: 0%;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <div id="navbar">
+    <a href="http://127.0.0.1:5500/Project/home.html" target="_blank"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="#team"><i class="fa fa-fw fa-user"></i> Our Team</a>
+    <a href="#r2"><i class="fa fa-fw fa-star"></i> Top Features</a>
+    <a href="http://127.0.0.1:5500/Project/PR-contact.html" target="_blank"><i class="fa fa-fw fa-phone"></i>
+      Contact</a>
+  </div>
+
+  <div class="bg-image"></div>
+
+
+  <div class="bg-text">
+
+    <h1 style="font-size:60px">About Us</h1>
+    <a class="topBtn" href="#team"><i class="fa fa-fw fa-arrow-down"></i> Get Started</a>
+  </div>
+
+
+
+  <div id="team" class="row">
+    <p class="p1"><b>Our Team</b> </p>
+    <div class="column">
+      <div class="card">
+        <img src="2.jpg" style="width:55%" height="350px">
+        <div class="cont">
+          <h2>Susneha Priyadarshini</h2>
+          <p class="title">CEO & Founder</p>
+          <p>AGE : 19 Yrs / Female</p>
+          <p>susneha07priyadarshini@gmail.com</p>
+          <h6>
+            <p>Know More</p>
+          </h6>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="column">
+      <div class="card">
+        <img src="1.jpg" style="width:55%" height="350px">
+        <div class="cont">
+          <h2>Mayank Kumar</h2>
+          <p class="title">Managing Director</p>
+          <p>AGE : 20 Yrs/ Male</p>
+          <p>meetmayankcv@gmail.com</p>
+          <h6>
+            <p>Know More</p><a href="#"></a>
+          </h6>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <h2> 7 Dec 2002</h2>
+          <p>On this day , a small baby was born in Bhubaneshwar ,Odisha. Later on She became a Genius Hardworking
+             &
+            efficient worker for her carrer.She has undergone various Projects for her skill development and Today
+             She
+            is the Owner of this Great Project , and She's doing absolutely
+            perfect in her field of Interests.
+            Also being motivation for others , She has Motivated her Team very well to complete the task smoothly.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="container right">
+        <div class="content">
+          <h2>13 Sep 2001</h2>
+          <p><em>This day is the most memorable day for me . Birthday !! Yeaah it's ofcourse a reason but another
+             most
+              important reason is that I got my better half on my birthday , my most precious gift ever .. I found
+               My Love
+              of my Life .</em> <br>
+            On this day Mayank was Born in Bokaro Steel City , Jharkhand . Later completed his
+            studies in his hometown itself till Secondary schooling . Learnt various skills and used here to make 
+            it
+            wonderfull project . He is very Dedicated & passionate about whatever he loves , He does his work with
+            Patience and Awareness .
+          </p>
+        </div>
+      </div>
+
+
+      <div class="container left">
+        <div class="content">
+          <h2>Matric-10th</h2>
+          <p>Completed her Matriculation Studies from Kendriya Vidyalaya , Chandigarh and Scored an aggregriate of
+             86% .
+            <br>
+            Good at SUBJECTS
+          </p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>Matric-10th</h2>
+          <p>Completed his Matriculation Studies from Chinmaya Vidyalaya , Bokaro and Scored an aggregriate of 94% .
+            <br>
+            Good at Mathematics and Computer Science.
+
+          </p>
+        </div>
+      </div>
+
+
+      <div class="container left">
+        <div class="content">
+          <h2>Inter-12th</h2>
+          <p>Completed her Intermediate Studies from Kendriya Vidyalaya , Chandigarh and Scored an aggregriate of
+             84% .
+            <br>
+            Good at SUBJECTS
+          </p>
+        </div>
+      </div>
+
+
+      <div class="container right">
+        <div class="content">
+          <h2>Inter-12th</h2>
+          <p>Completed his Intermediate Studies from Chinmaya Vidyalaya , Bokaro and Scored an aggregriate of 86% 
+            . <br>
+            Good at Mathematics and Computer Science.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="container left">
+        <div class="content">
+          <h2>B.tech</h2>
+          <p>After the Primary & Secondary Studies , now it's time for the Technical degree , For this I have
+             choosen
+            <b>ITER COLLEGE , SOA UNIVERSITY</b> situated in Bhubaneshwar, Odisha . B.tech period is of 4 yrs i.e
+            (2020-24) then having an Aim of becoming Senior Software Developer in Reputed firms.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="container right">
+        <div class="content">
+          <h2>B.tech</h2>
+          <p>After the Primary & Secondary Studies , now it's time for the Technical degree , For this I have 
+            choosen
+            <b>ITER COLLEGE , SOA UNIVERSITY</b> situated in Bhubaneshwar, Odisha . B.tech period is of 4 yrs i.e
+            (2020-24) then having an Aim of becoming Senior Software Developer in Reputed firms.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="s" class="zigZag">
+      <div class="roww">
+        <div class="C66">
+          <h1 class="xlarge-font"><b>Susneha</b></h1>
+          <h1 class="large-font" style="color:rgb(255, 0, 149);"><b>Saina !</b></h1>
+          <p><span style="font-size:36px">Live like a pro.</span> Just Live like a Pro as our CEO does , Her mind
+            blowing Experiences and Expertised Advise make our Firm rise & Grow more . We are Thankful to Her.</p>
+          <button class="button">Follow</button>
+        </div>
+        <div class="C33">
+          <img
+            src="https://static.greatbigcanvas.com/images/singlecanvas_thick_none/bigstock/s-purple-neon-shift-letter-art,2291047.jpg?max=540"
+            width="350" height="480">
+          <!-- <img
+            src="2.jpg"
+            width="350" height="480"> -->
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="zigZag">
+      <div class="roww">
+        <div class="C66">
+          <h1 class="xlarge-font"><b>Mayank</b></h1>
+          <h1 class="large-font" style="color:blue;"><b>MK !</b></h1>
+          <p><span style="font-size:36px">Develop like a pro.</span> Our Managing Director delivers his best 
+            in whatever
+            the firm needs . His works are so efficient & Benificial for us .
+          </p>
+          <button class="button" style="background-color:red">Follow</button>
+        </div>
+        <div class="C33">
+          <img
+            src="https://static.greatbigcanvas.com/images/singlecanvas_thick_none/bigstock/m-purple-neon-shift-letter-art,2291030.jpg?mw=540&mh=500&max=540"
+            width="350" height="480">
+          <!-- <img
+            src="1.jpg"
+            width="350" height="480"> -->
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="zigZag">
+      <div class="roww">
+        <div class="C66">
+          <h1 class="xlarge-font"><b>Our Superb Delivery</b></h1>
+          <h1 class="large-font" style="color:rgb(255, 145, 0);"><b>Why to wait?</b></h1>
+          <p><span style="font-size:36px">Superfast like a pro.</span> We deliver Quality along with Speed ,
+             Enjoy our 1
+            day Superfast delivery and enjoy Plus Benifits. Other Customers also get Superb 3 day Delivery.
+          </p>
+          <button class="button">Order Now </button>
+        </div>
+        <div class="C33">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/002/429/338/large_2x/fast-delivery-neon-signs-style-text-vector.jpg"
+            width="350" height="480">
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="zigZag">
+      <div class="roww">
+        <div class="C66">
+          <h1 class="xlarge-font"><b>Our Return Policy</b></h1>
+          <h1 class="large-font" style="color:rgb(240, 13, 13);"><b>Why Stressed?</b></h1>
+          <p><span style="font-size:36px">Shop like a pro.</span> Want something else? Size unfit issues ?
+             Don't worry ,
+            we are here to serve you as per your convinience , so we have our 15 days Replace/Refund Policy .
+          </p>
+          <button class="button">Contact Us</button>
+        </div>
+        <div class="C33">
+          <img
+            src="https://yt3.ggpht.com/a/AATXAJxVSk4LmrcCaoajEit_X639NmN9DYofIVojCmhUdQ=s900-c-k-c0xffffffff-no-rj-mo"
+            width="350" height="480">
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <h4> <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i></h4>
+  <div class="rate">
+    <h2>User Rating</h2>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <hr>
+  </div>
+  <p>
+
+  </p>
+
+
+
+  <div id="r2" class="row2">
+    <div class="colm">
+      <div class="card2">
+        <i class="fa fa-fw fa-globe"></i>
+        <h3>Strategy</h3>
+        <p class="txt">Our Idea & Strategy was simple to reach far. Just to make public easier to buy anything
+           they need
+          at a single place
+          comfortably.</p>
+
+      </div>
+    </div>
+
+
+    <div class="colm">
+      <div class="card2">
+        <i class="fa fa-fw fa-pencil"></i>
+        <h3>Results</h3>
+        <p class="txt"> We recieved a positive response from our Team as well as Public in a small span of time 
+          period .
+        </p>
+
+      </div>
+    </div>
+
+
+    <div class="colm">
+      <div class="card2">
+        <i class="fa fa-fw fa-diamond"></i>
+        <h3>Expertise</h3>
+        <p class="txt">We have utilised our Experts & Resorces for Delivering the best We can .
+           We love to do things in
+          an Expertise Way.</p>
+
+      </div>
+    </div>
+
+    <div class="colm">
+      <div class="card2">
+        <i class="fa fa-fw fa-user"></i>
+        <h3>Support</h3>
+        <p class="txt">You can reach us anytime at support@ons.com We also have 24*7 chat Support
+           for your convinience.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="ylw"></div>
+  <p><br></p>
+  <div class="row1">
+    <div class="col">
+      <div class="facard">
+        <p><i class="fa fa-smile-o"></i></p>
+        <h3>15 Days</h3>
+        <p>Easy Returns</p>
+      </div>
+    </div>
+
+
+
+    <div class="col">
+      <div class="facard">
+        <p><i class="fa fa-check"></i></p>
+        <h3>55+</h3>
+        <p>Stores</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="facard">
+        <p><i class="fa fa-truck"></i></p>
+        <h3>Unlimited</h3>
+        <p>Free Shipping</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="facard">
+        <p><i class="fa fa-coffee"></i></p>
+        <h3>100+</h3>
+        <p>Quality Checks</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cpyri8">
+    <p>All rights Reserved by One Stop ShopIn<br> <span>Copyright@2022</span></p>
+    <a class="pp" href="http://127.0.0.1:5500/Project/pr-privacy.html"> Privacy Policy</a>
+  </div>
+
+
+
+  <script>
+
+    window.onscroll = function () { myFunction() };
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>

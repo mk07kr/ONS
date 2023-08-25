@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://www.railbookers.com.au/sites/railbookers/files/images/icons/headset.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .myContainer {
+      margin: auto;
+      height: 500px;
+      border-radius: 10px;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: lightslategray;
+      position: relative;
+    }
+
+    .topnav #Links {
+      display: none;
+    }
+
+    .topnav a {
+      color: whitesmoke;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+
+    .topnav a.icon {
+      background: black;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav a:hover {
+      background-color: rgb(255, 242, 221);
+      color: black;
+      border-radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+      margin-top: 6px;
+      padding: 20px;
+    }
+
+    .container {
+      border-radius: 55px;
+      background-color: gainsboro;
+      padding: 10px;
+      font-size: 1.1rem;
+      margin: 11px;
+    }
+
+    input[type=text],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    .btn1 {
+      background-color: rgb(255, 196, 0);
+      color: black;
+      padding: 16px 24px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn1:hover {
+      background-color: rgb(67, 29, 236);
+      color: whitesmoke;
+      padding: 20px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+
+
+
+    .social-container a {
+      border: 1px solid khaki;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 65px;
+      width: 65px;
+    }
+
+    .social-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-container a:hover {
+      padding: 35px;
+      color: blue;
+    }
+
+    a {
+      color: #333;
+      font-size: 14px;
+      text-decoration: none;
+      margin: 15px 0;
+    }
+
+    .ftr {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 2rem;
+      color: rgb(82, 255, 47);
+      text-shadow: 2px 2px 1px blue;
+    }
+
+    .hide {
+      display: hidden;
+    }
+
+    .cpyri8 {
+      text-align: center;
+      padding: 10px;
+      font-size: 1.1rem;
+      background: linear-gradient(180deg, transparent, #bfff99);
+    }
+
+    .pp {
+      font-size: 1rem;
+    }
+
+    marquee {
+      font-size: 2.7rem;
+      color: rgb(255, 174, 0);
+      text-shadow: 3px 3px 2px rgb(0, 0, 255);
+      margin-top: 25px;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+
+
+    .open-button {
+      background-color: rgb(155, 149, 149);
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+
+
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid rgb(255, 242, 227);
+      z-index: 30;
+    }
+
+
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+
+
+    .form-container textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+      resize: none;
+      min-height: 200px;
+    }
+
+
+    .form-container textarea:focus {
+      background-color: rgb(212, 207, 207);
+      outline: none;
+    }
+
+
+    .form-container .btn {
+      background-color: rgb(0, 81, 255);
+      color: whitesmoke;
+      padding: 16px 20px;
+      cursor: pointer;
+      width: 40%;
+      margin-bottom: 10px;
+      float: inline-start;
+      opacity: 0.8;
+      border-radius: 12px;
+      margin: 11px;
+      box-shadow: 2px 2px 1px gray;
+    }
+
+
+    .form-container .cancel {
+      background-color: red;
+    }
+
+
+
+    .open-button:hover {
+      opacity: 1;
+      color: rgb(255, 196, 0);
+      padding: 18px;
+      border-radius: 9px;
+      font-size: 1rem;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    h1 {
+      font: bold 300% Consolas, Monaco, monospace;
+      margin-left: 145px;
+      border-right: .1em solid black;
+      width: 16.5em;
+      width: 45ch;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3.5s steps(20, end),
+        blink-caret .5s step-end infinite alternate;
+      background: linear-gradient(180deg, transparent, #81e2ff);
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="myContainer">
+
+
+    <div id="navbar" class="topnav">
+      <a href="http://127.0.0.1:5500/Project/home.html"><i class="fa fa-fw fa-stop"></i> One Stop ShopIn</a>
+      <div id="Links">
+        <a href="http://127.0.0.1:5500/Project/home.html" target="_blank"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="http://127.0.0.1:5500/Project/PR%20about.html" target="_blank"><i class="fa fa-fw fa-user"></i>
+          About</a>
+        <a href="http://127.0.0.1:5500/Project/prod.html"><i class="fa fa-fw fa-wrench"></i> Services</a>
+        <a href="http://127.0.0.1:5500/Project/pr-FAQ.html" target="_blank"><i class="fa fa-fw fa-question"></i>
+          FAQ's</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+
+
+    <div class="head">
+      <marquee behavior="alternate" direction="left" scrollamount="13">Welcome to our Contact & Support Section
+      </marquee>
+    </div>
+
+    <h1>Team ONS Welcomes You ! We are here to help!!</h1>
+
+
+    <div class="head">
+      <img
+        src="https://th.bing.com/th/id/R.96765b5ade9da90075d7c11a1a816433?rik=oNgB35Vz%2f7xKfw&riu=http%3a%2f%2fwww.mibs.com.mm%2fimage%2fbanner%2ftechnology.jpg&ehk=VVKQ1iS%2bxH7y0BsnLk6PYX4fUGohX4TgTiKQs8%2f%2bDL0%3d&risl=&pid=ImgRaw&r=0"
+        style="width:100%">
+    </div>
+    <div id="ct" class="container">
+      <div style="text-align:center">
+        <h2><i class="fa fa-fw fa-bell"></i>Contact Us</h2>
+        <p><i class="fa fa-fw fa-arrow-right"></i>Swing by for a cup of coffee<i class="fa fa-fw fa-coffee"></i> or
+          leave us a message:<i class="fa fa-fw fa-envelope"></i></p>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0014/0302/7527/products/Coffee-Break-Neon-Sign-CO_800x800@2x.jpg?v=1608671500"
+            style="width:100%">
+        </div>
+        <div class="column">
+          <form action="https://formsubmit.co/270bbb1c46a72d368216bddeb0d57d7e" method="POST">
+            <label for="fname">First Name</label>
+            <input type="text" name="fn" placeholder="Your name.."  required>
+            <label for="lname">Last Name</label>
+            <input type="text" name="ln" placeholder="Your last name.."  required>
+            <label for="mob">Mobile Number</label><br>
+            <!-- <input type="hidden" name="_autoresponse" value="Dear Customer , Thank You for using our services , We will reach you soon , about your concern topic ,
+               hope you liked our services ,*Note- This is a computer Generated mail from Team ONS , 
+               our executives will look into it soon , Stay Tuned for latest offers and updates, Regards-TEAM ONS">
+               <label for="email">Email Address</label>
+               <input type="text" name="email" placeholder="Enter Email Address" id="e1"> -->
+            <input type="text" name="mobile" placeholder="Mobile No (Optional)">
+
+            <label for="sub">Subject</label>
+            <input type="text" name="subject" placeholder="Enter Subject/Topic here"  required>
+            <label for="mg">Message</label>
+            <textarea id="sub" name="message" placeholder="Write something..." style="height:170px" ></textarea>
+            <input type="hidden" name="_next" value=" http://127.0.0.1:5500/Project/thanks.html">
+            <button class="btn1" onclick="disp()">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <p><b>FOLLOW US</b> </p>
+    </div>
+    <div class="social-container">
+      <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en-GB&flowName=GlifWebSignIn&flowEntry=SignUp"
+        class="social"><i class="fab fa fa-google fa-2x"></i></a>
+      <a href="https://www.facebook.com/login" class="social"><i class="fa fa-facebook fa-2x"></i></a>
+      <a href="https://twitter.com/" class="social"><i class="fab fa fa-twitter fa-2x"></i></a>
+      <a href="https://instagram.com/" class="social"><i class="fab fa fa-instagram fa-2x"></i></a>
+    </div>
+
+    <button class="open-button" onclick="openForm()"><i class="fa fa-fw fa-envelope"></i> Chat with Us 24*7</button>
+
+    <div class="chat-popup" id="myForm">
+      <form action="#" class="form-container">
+        <h2>Chat With Us</h2>
+
+        <label for="msg"><b>Tell us about your Issue</b></label>
+        <textarea id="t1" placeholder="Type message here.." name="msg" required></textarea>
+
+        <button type="submit" class="btn" onclick="Send()">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+
+
+    <div class="cpyri8">
+      <p>All rights Reserved by One Stop ShopIn <br> <span>Copyright@2022</span></p>
+      <a class="pp" href="http://127.0.0.1:5500/Project/pr-privacy.html"> Privacy Policy</a>
+    </div>
+
+
+
+    <script>
+
+      function myFunction() {
+        var x = document.getElementById("Links");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+      function disp() {
+        var s = document.getElementById("sub").value;
+        if (s == '') {
+          alert('Message Cannot be empty , Please write Something there.');
+        }
+        else {
+          alert("Thanks for Reaching to us , We have Recieved Your message .We are Glad to listen from You and We will work upon your suggestions(if any). Keep Shopping.");
+        }
+      }
+
+
+
+      function Send() {
+        var m = document.getElementById("t1").value;
+        if (m == '') {
+          alert('Message Cannot be empty , Please describe us about your issue.');
+        }
+        else {
+          alert("Thanks for Reaching to us , We have Recieved Your message concern . Our Support team will respond you in a while . Keep Shopping.");
+        }
+      }
+
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
+
+    </script>
+
+</body>
+
+</html>

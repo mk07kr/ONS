@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome To Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="mk.jpg">
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightcyan;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg-img {
+            background-image: url("https://source.unsplash.com/collection/190727/1600x900");
+            min-height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+
+        .container {
+            position: absolute;
+            right: 0;
+            margin: 10px 30px 0px 0px;
+            max-width: 350px;
+            padding: 16px;
+            background-color: white;
+            border-radius: 15px;
+        }
+
+
+        input[type=text],
+        input[type=password],
+        input[type=email],
+        input[type=date] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus,
+        input[type=password]:focus {
+            background-color: rgb(245, 255, 209);
+            outline: none;
+            padding: 20px;
+        }
+
+
+        #btn1 {
+            background-color: bisque;
+            color: red;
+            padding: 16px 20px;
+            border: 1px solid black;
+            border-radius: 14px;
+            cursor: pointer;
+            width: 38%;
+            opacity: 0.8;
+        }
+
+        #btn2 {
+            position: relative;
+            background-color: bisque;
+            color: red;
+            padding: 16px 20px;
+            border: 1px solid black;
+            border-radius: 14px;
+            cursor: pointer;
+            width: 38%;
+            float: right;
+            opacity: 0.8;
+        }
+
+        .btn:hover {
+            opacity: 1;
+            padding: 16px;
+            font-size: 1.1rem;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 0px;
+
+        }
+
+        a {
+            color: #333;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0;
+        }
+
+        #Sidebar a {
+            position: absolute;
+            left: -105px;
+            transition: 0.5s;
+            padding: 16px;
+            width: 145px;
+            text-decoration: none;
+            font-size: 19px;
+            color: white;
+            border-radius: 0 5px 5px 0;
+            z-index: 2;
+        }
+
+        #Sidebar a:hover {
+            left: 0;
+        }
+
+        #home {
+            top: 20px;
+            background-color: #2196F3;
+        }
+
+        #about {
+            top: 80px;
+            background-color: #04AA6D;
+        }
+
+
+
+        #projects {
+            top: 140px;
+            background-color: #f44336;
+        }
+
+        #contact {
+            top: 200px;
+            background-color: #555
+        }
+
+        #text {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="Sidebar" class="sidenav">
+        <a href="http://127.0.0.1:5500/Project/home.html" target="_blank" id="home"><i
+                class="fa fa-fw fa-home"></i>Home</a>
+        <a href="http://127.0.0.1:5500/Project/PR%20about.html" target="_blank" id="about"><i
+                class="fa fa-fw fa-user"></i>About</a>
+        <a href="http://127.0.0.1:5500/Project/pr-FAQ.html" id="projects"><i class="fa fa-fw fa-question"></i>FAQ's</a>
+        <a href="http://127.0.0.1:5500/Project/PR-contact.html" id="contact"><i
+                class="fa fa-fw fa-phone"></i>Contact</a>
+    </div>
+
+
+
+
+    <div class="bg-img">
+        <form action="" class="container" id="m1">
+            <h1>Sign Up</h1>
+            <label for="nm"><b>Name</b></label>
+            <input type="text" placeholder="Your Name" name="nm" id="t1" required>
+
+            <label for="email"><b>Email ID</b></label>
+            <input type="email" placeholder="Your Email" name="email" id="t2" required>
+
+
+            <label for="userid"><b>Username</b></label>
+            <input type="text" placeholder="Your Username" name="userid" id="t3" required>
+
+            <label for="dob"><b>Date of Birth</b></label>
+            <input type="date" placeholder="DOB">
+
+            <label for="psw"><b>Password</b></label>
+            <input id="myInput" type="password" placeholder="Enter Password" name="psw" id="t4" required>
+            <p id="text">WARNING! Caps lock is ON.</p>
+
+            <label for="psw"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Enter Password Again" name="psw" id="t5" required>
+
+
+            <input type="checkbox" name="me" id="me">
+            <h6> I Agree <a href="http://127.0.0.1:5500/Project/pr-T&C.html" target="_blank"> Terms & Conditions</a>
+            </h6>
+
+            <input type="submit" value="Reset" onClick="clearFunc()" class="btn" id="btn1">
+            <input type="submit" value="SignUp" class="btn" id="btn2" onclick="registration()">
+            <h6>Already have an Account ? <a href="http://127.0.0.1:5500/Project/login.html" target="_blank">Login Here
+                    !</a></h6>
+        </form>
+    </div>
+    <script>
+        function registration() {
+
+            var name = document.getElementById("t1").value;
+            var email = document.getElementById("t2").value;
+            var uname = document.getElementById("t3").value;
+            var pwd = document.getElementById("t4").value;
+            var cpwd = document.getElementById("t5").value;
+
+            //email id expression code
+            var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+            var letters = /^[A-Za-z]+$/;
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            if (name == '') {
+                alert('Please enter your name');
+            }
+            else if (!letters.test(name)) {
+                alert('Name field required only alphabet characters(A-Z)');
+            }
+            else if (email == '') {
+                alert('Please enter your user email id');
+            }
+            else if (!filter.test(email)) {
+                alert('Invalid email , Enter Again');
+            }
+            else if (uname == '') {
+                alert('Please enter the user name.');
+            }
+            else if (!letters.test(uname)) {
+                alert('User name field required only alphabet characters(A-Z)');
+            }
+            else if (pwd == '') {
+                alert('Please enter Password');
+            }
+            else if (cpwd == '') {
+                alert('Enter Confirm Password');
+            }
+            else if (!pwd_expression.test(pwd)) {
+                alert('Atleast 1 Upper case, 1 Lower case, 1 Special character and 1 Numeric letter are required in Password field');
+            }
+            else if (pwd != cpwd) {
+                alert('Password not Matched , Try Again');
+            }
+            else if (document.getElementById("t5").value.length < 6) {
+                alert('Password minimum length is 6');
+            }
+            else if (document.getElementById("t5").value.length > 12) {
+                alert('Password max length is 12');
+            }
+            else {
+                alert('Thank You for Creating your account & You are Redirecting to our Login Website');
+
+                window.location = "http://127.0.0.1:5500/Project/login.html";
+            }
+        }
+        function clearFunc() {
+            document.getElementById("t1").value = "";
+            document.getElementById("t2").value = "";
+            document.getElementById("t3").value = "";
+            document.getElementById("t4").value = "";
+            document.getElementById("t5").value = "";
+        }
+
+        var input = document.getElementById("myInput");
+        var text = document.getElementById("text");
+        input.addEventListener("keyup", function (event) {
+
+            if (event.getModifierState("CapsLock")) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none"
+            }
+        });
+
+    </script>
+</body>
+
+</html>

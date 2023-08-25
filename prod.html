@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products</title>
+  <link rel="icon" href="https://th.bing.com/th/id/OIP.WqRGb-jmT4-DGyhVlyxFOAAAAA?pid=ImgDet&rs=1">
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      /* background-color: rgb(255, 233, 233); */
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 18px;
+    }
+
+
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+
+    ::-webkit-scrollbar-thumb {
+      background: rgb(147, 255, 126);
+      border-radius: 10px;
+    }
+
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(164, 88, 235);
+    }
+
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: black;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 8px 8px 8px 34px;
+      text-decoration: none;
+      font-size: 25px;
+      color: gray;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: wheat;
+      padding: 22px;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: black;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+
+    }
+
+    input[type='text'] {
+      padding: 15px;
+      /* margin-left: 4px; */
+      font-size: 1rem;
+    }
+
+    .openbtn:hover {
+      background-color: gray;
+    }
+
+    #main {
+
+      padding: 16px;
+    }
+
+
+    @media screen and (max-height: 450px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .price {
+      color: grey;
+      font-size: 22px;
+      padding: 13px;
+    }
+
+    .card a {
+      border: none;
+      outline: 0;
+      padding: 14px;
+      color: whitesmoke;
+      background-color: black;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 15px;
+      opacity: 0.8;
+    }
+
+    .card a:hover {
+      opacity: 1;
+    }
+
+    .grids {
+      display: grid;
+      margin-top: 30px;
+      grid-gap: 1rem;
+      /* float: left; */
+      grid-template-columns: 3fr 3fr 3fr 3fr;
+
+    }
+
+    @media screen and (max-width: 650px) {
+      .grids {
+        grid-template-columns: 2fr 2fr;
+      }
+
+      .card a {
+        font-size: medium;
+        padding: 11px;
+      }
+
+    }
+
+    h1 {
+      font-size: 1.2rem;
+    }
+
+    .cpyri8 {
+      text-align: center;
+      padding: 10px;
+      font-size: 1.1rem;
+      background: linear-gradient(180deg, transparent, #bfff99);
+      margin-top: 25px;
+    }
+
+    h2 {
+      top: 0;
+      position: sticky;
+      z-index: 1;
+      padding: 15px;
+      margin-left: 550px;
+      text-align: center;
+      width: 25vw;
+      border: 5px solid bisque;
+      border-radius: 15px;
+      background-color: rgb(184, 255, 231);
+      font-size: 1.8rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li><a href="http://127.0.0.1:5500/Project/home.html"> ShopIn Home</a></li>
+      <li><a href="#kids">Kids Fashion</a></li>
+      <li><a href="#men">Men Fashion</a></li>
+      <li><a href="#women">Women Fashion</a></li>
+      <li><a href="#mob">Mobiles</a></li>
+      <li><a href="#lap">Laptops</a></li>
+      <li><a href="http://127.0.0.1:5500/Project/error.html">Tablet</a></li>
+      <li><a href="http://127.0.0.1:5500/Project/error.html">Grocery</a></li>
+      <li><a href="http://127.0.0.1:5500/Project/error.html">Kitchen</a></li>
+      <li><a href="http://127.0.0.1:5500/Project/error.html">Furniture</a></li>
+      <li><a href="#tv">TV & Speakers</a></li>
+      <li><a href="#un">Underwear</a></li>
+      <li><a href="#ft">Footwear</a></li>
+      <li><a href="http://127.0.0.1:5500/Project/coming.html">ONS+ Plus</a></li>
+      <li><a href="http://127.0.0.1:5500/Project/PR%20about.html">About US</a></li>
+      <li><a href="http://127.0.0.1:5500/Project/disc%20coupons.html">Top Offers</a></li>
+      <li><a href="http://127.0.0.1:5500/Project/PR-contact.html">Contact</a></li>
+      <li><a href="http://127.0.0.1:5500/Project/pr-FAQ.html">Need Help ? FAQ</a></li>
+      <li></li>
+    </ul>
+  </div>
+  </div>
+
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>
+  </div>
+
+  <p>
+  <h2>One Stop ShopIn</h2>
+  </p>
+
+  <div class="grids">
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/khxqt8w0/kids-dress/9/7/j/8-9-years-plus-buti-baby-gown-blue-fashion-dream-original-imafxu7rqutbdzvq.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Full Length Party Dress </h1>
+      <p class="price">@519</p>
+      <p><a
+          href="https://www.flipkart.com/fashion-dream-indi-girls-maxi-full-length-party-dress/p/itmfffmfxevwshst?pid=KDEFFFM2HFTTPPFM&lid=LSTKDEFFFM2HFTTPPFMZFZ0GA&marketplace=FLIPKART&q=kids+fashion&store=clo%2Fodx%2Fmaj%2Fzc1&srno=s_1_14&otracker=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&fm=search-autosuggest&iid=6ea7b4cc-2866-4651-bbfb-76deff3ca817.KDEFFFM2HFTTPPFM.SEARCH&ppt=sp&ppn=sp&qH=4bae2b4d5050db2f">Add
+          to Cart</a></p>
+    </div>
+
+
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kx0q4y80/kids-dress/l/j/j/11-12-years-gf0066-tl-blu-fashion-dream-original-imag9kkcb3hqvfw8.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Girls Calf Length Casual Dress</h1>
+      <p class="price">@424</p>
+      <p><a
+          href="https://www.flipkart.com/fashion-dream-girls-calf-length-casual-dress/p/itm46b19e8b5cfb6?pid=KDEG9KKCJAAWNXS2&lid=LSTKDEG9KKCJAAWNXS2MLAMRP&marketplace=FLIPKART&q=kids+fashion&store=clo%2Fodx%2Fmaj%2Fzc1&srno=s_1_18&otracker=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&fm=search-autosuggest&iid=a1a1a286-a1d7-46d1-812c-5555917fe7ee.KDEG9KKCJAAWNXS2.SEARCH&ppt=sp&ppn=sp&qH=4bae2b4d5050db2f">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/krwec280/kids-dress/g/n/e/5-6-years-gf0001-purple-mirrow-trade-original-imag5h7tuqp7q3hv.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Girls Calf Length Party Dress</h1>
+      <p class="price">@519</p>
+      <p><a
+          href="https://www.flipkart.com/fashion-dream-girls-calf-length-party-dress/p/itm10a3b281bc05e?pid=KDEG5H8FY4RXMB5F&lid=LSTKDEG5H8FY4RXMB5FV6AKWR&marketplace=FLIPKART&q=kids+fashion&store=clo%2Fodx%2Fmaj%2Fzc1&srno=s_1_30&otracker=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&fm=search-autosuggest&iid=a1a1a286-a1d7-46d1-812c-5555917fe7ee.KDEG5H8FY4RXMB5F.SEARCH&ppt=sp&ppn=sp&qH=4bae2b4d5050db2f">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kon887k0/kids-dress/u/7/m/2-3-years-frock08-adtas-original-imag3fyqhb7mwsay.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Barbie Above Knee Festive Dress</h1>
+      <p class="price">@353</p>
+      <p><a
+          href="https://www.flipkart.com/riya-fashion-above-knee-festive-wedding-dress/p/itmf6a3c9cab25ff?pid=KDEG6H9YZKWG3SJZ&lid=LSTKDEG6H9YZKWG3SJZGPMRDZ&marketplace=FLIPKART&q=kids+fashion&store=clo%2Fodx%2Fmaj%2Fzc1&srno=s_7_260&otracker=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&fm=search-autosuggest&iid=en_RMHTu15%2FDLkasHkyxAOa27iL7MZerE0%2FuAGCPYVSTQ5LphnEV18gXR7CaCy2HMgnUkZzCohNVu7SmZtP3lkZfQ%3D%3D&ppt=sp&ppn=sp&qH=4bae2b4d5050db2f">Add
+          to Cart</a></p>
+    </div>
+    <div id="kids" class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/ko1smfk0/kids-dress/6/y/h/3-4-years-digital01-adtas-original-imag2hag8x7pdcht.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Knee Length Party Dress </h1>
+      <p class="price">@215</p>
+      <p><a
+          href="https://www.flipkart.com/barnali-fashion-baby-girls-midi-knee-length-party-dress/p/itm8c858727407ca?pid=KDEG86GSNQYYQPMG&lid=LSTKDEG86GSNQYYQPMGLZIBFS&marketplace=FLIPKART&q=kids+fashion&store=clo%2Fodx%2Fmaj%2Fzc1&srno=s_1_2&otracker=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_8_na_na_na&fm=search-autosuggest&iid=en_6aDqdKsUSZIWn4%2BRb2srhO00IjEEeEa005Uc1IJCi42A8Kud3SCgQt04f3vkEf1HMdbb3BRFpsLkdqq0oULtcQ%3D%3D&ppt=sp&ppn=sp&ssid=u1cqmptmkw0000001648629780357&qH=4bae2b4d5050db2f">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/k6ci8i80/kids-t-shirt/s/y/7/11-12-years-tblrnfulboy-lion-tripr-original-imafzu63fxtmbpbr.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Boys Printed Pure Cotton T Shirt</h1>
+      <p class="price">@306</p>
+      <p><a
+          href="https://www.flipkart.com/tripr-boys-printed-pure-cotton-t-shirt/p/itm19ffa16fbb5d3?pid=KTBFZUFQYGGHZ5HX&lid=LSTKTBFZUFQYGGHZ5HXDYGG8E&marketplace=FLIPKART&q=kids+t+shirt&store=clo%2Fash%2Fank%2Fpgi&srno=s_1_16&otracker=AS_Query_OrganicAutoSuggest_8_12_na_na_na&otracker1=AS_Query_OrganicAutoSuggest_8_12_na_na_na&fm=search-autosuggest&iid=en_7ba1zQb6o727r9bhoLbfN3KlrY2ZwHUyjecyGTsH0omN1gIYBSXS4d2DmfeLK3tg0V0zf5d04%2FdXgPp59cfLCw%3D%3D&ppt=sp&ppn=sp&ssid=cz9msi1ygg0000001648630472795&qH=54973c1295c8f3b1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/l0lbrm80/kids-t-shirt/f/h/u/8-9-years-mactshrt313-disney-by-miss-chief-original-imagccj74nu4bhsa.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Superhero Cotton Blend T Shirt</h1>
+      <p class="price">@349</p>
+      <p><a
+          href="https://www.flipkart.com/disney-miss-chief-boys-cartoon-superhero-cotton-blend-t-shirt/p/itm29cba1f5492c3?pid=KTBGCCPHWHUQYGYA&lid=LSTKTBGCCPHWHUQYGYAIODUI9&marketplace=FLIPKART&q=kids+t+shirt&store=clo%2Fash%2Fank%2Fpgi&srno=s_1_26&otracker=AS_Query_OrganicAutoSuggest_8_12_na_na_na&otracker1=AS_Query_OrganicAutoSuggest_8_12_na_na_na&fm=search-autosuggest&iid=5df4e374-0613-470e-8aef-bb62b145df80.KTBGCCPHWHUQYGYA.SEARCH&ppt=sp&ppn=sp&qH=54973c1295c8f3b1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kvba7bk0/kids-t-shirt/3/8/x/15-16-years-boy21-jc-rn-fs-mrn-chevr-jump-cuts-original-imag88pefv39ztj5.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Boys Printed Pure Cotton T Shirt </h1>
+      <p class="price">@204</p>
+      <p><a
+          href="https://www.flipkart.com/jump-cuts-boys-printed-pure-cotton-t-shirt/p/itmd24776ccc680d?pid=KTBG88PFHZQGABZS&lid=LSTKTBG88PFHZQGABZSY4X4RC&marketplace=FLIPKART&q=kids+t+shirt&store=clo%2Fash%2Fank%2Fpgi&srno=s_1_39&otracker=AS_Query_OrganicAutoSuggest_8_12_na_na_na&otracker1=AS_Query_OrganicAutoSuggest_8_12_na_na_na&fm=search-autosuggest&iid=5df4e374-0613-470e-8aef-bb62b145df80.KTBG88PFHZQGABZS.SEARCH&ppt=sp&ppn=sp&qH=54973c1295c8f3b1">Add
+          to Cart</a></p>
+    </div>
+
+
+
+
+    <div id="men" class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kg5fzww0-0/shirt/p/z/o/s-afmnblupri0804-asian-fitch-original-imafwg6yakz58cuf.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Men Slim Fit Printed Casual Shirt</h1>
+      <p class="price">@311</p>
+      <p><a
+          href="https://www.flipkart.com/asian-fitch-men-printed-casual-blue-shirt/p/itmfd42e6f22ed1b?pid=SHTFN7UPM29YS9WC&lid=LSTSHTFN7UPM29YS9WCVYFCRQ&marketplace=FLIPKART&q=men+shirt&store=clo%2Fash%2Faxc%2Fmmk%2Fkp7&srno=s_1_12&otracker=AS_QueryStore_OrganicAutoSuggest_3_3_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_3_3_na_na_na&fm=search-autosuggest&iid=en_uElkeqVip5nB%2FpB3PjfpILwbZ6GsUHV5i4OyPpB1iDfvdlcWGdgfR%2BHovsoMSWbcOBFvQBvGiYvOw%2BUDt73JRw%3D%3D&ppt=sp&ppn=sp&ssid=gyckj2hlgg0000001648630688850&qH=de4076777a6d5937">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kr58yvk0/shirt/o/j/w/m-czba-db-den-cazzba-original-imag5ydv3hazjb6g.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Men Regular Fit Washed Cut Away Collar Casual Shirt</h1>
+      <p class="price">@410</p>
+      <p><a
+          href="https://www.flipkart.com/cazzba-men-washed-casual-grey-shirt/p/itme6840597ca06b?pid=SHTG5YDVSQAUMRTF&lid=LSTSHTG5YDVSQAUMRTFTSOERC&marketplace=FLIPKART&q=men+shirt&store=clo%2Fash%2Faxc%2Fmmk%2Fkp7&srno=s_1_10&otracker=AS_QueryStore_OrganicAutoSuggest_3_3_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_3_3_na_na_na&fm=search-autosuggest&iid=f2335c39-cccb-4eef-8fae-516d813daf4e.SHTG5YDVSQAUMRTF.SEARCH&ppt=sp&ppn=sp&qH=de4076777a6d5937">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/l0vbukw0/t-shirt/a/z/r/xl-tnvrn-d44-tripr-original-imagck8qhvavuqzg.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Printed Men Round Neck Dark Blue T-Shirt</h1>
+      <p class="price">@199</p>
+      <p><a
+          href="https://www.flipkart.com/tripr-printed-men-round-neck-dark-blue-t-shirt/p/itmc62ea63fb2c31?pid=TSHG9HZCUQBHUQZJ&lid=LSTTSHG9HZCUQBHUQZJLOHNC5&marketplace=FLIPKART&sattr[]=color&sattr[]=size&st=size">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kx0q4y80/t-shirt/b/w/v/m-tblrn-d45-tripr-original-imag9khrxssczfbw.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Printed Men Round Neck Black T-Shirt</h1>
+      <p class="price">@199</p>
+      <p><a
+          href="https://www.flipkart.com/tripr-printed-men-round-neck-black-t-shirt/p/itm67874a0b18802?pid=TSHG9HZC8FZHNUBH&lid=LSTTSHG9HZC8FZHNUBHPJ28GH&marketplace=FLIPKART&sattr[]=color&sattr[]=size&st=size">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kxdl3m80/trouser/p/i/u/32-asactr4045-arrow-sport-original-imag9uesetgrdeux.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Slim Fit Men Green Cotton Blend Trousers</h1>
+      <p class="price">@1437</p>
+      <p><a
+          href="https://www.flipkart.com/arrow-sport-slim-fit-men-green-trousers/p/itmcbc1db7238e6a?pid=TROG84BCKNMXPYWQ&lid=LSTTROG84BCKNMXPYWQVHDP4N&marketplace=FLIPKART&q=men+chinos+pant&store=clo%2Fvua%2Fmle%2Flhk&srno=s_1_15&otracker=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_na&fm=search-autosuggest&iid=b4757c44-ab65-4819-95dd-22f8018fd922.TROG84BCKNMXPYWQ.SEARCH&ppt=sp&ppn=sp&ssid=ltykpx9x0w0000001648634431009&qH=31097073ba92931e">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/k70spzk0/trouser/m/k/c/30-hltr003862-highlander-original-imafpcht4d48ngmc.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Slim Fit Men Grey Cotton Lycra Blend Trousers</h1>
+      <p class="price">@529</p>
+      <p><a
+          href="https://www.flipkart.com/highlander-slim-fit-men-grey-trousers/p/itmf3zbteygq7v4h?pid=TROEZB2FJPSPAVPX&lid=LSTTROEZB2FJPSPAVPXPF0NN2&marketplace=FLIPKART&q=men+chinos+pant&store=clo%2Fvua%2Fmle%2Flhk&srno=s_1_2&otracker=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_na&fm=search-autosuggest&iid=b4757c44-ab65-4819-95dd-22f8018fd922.TROEZB2FJPSPAVPX.SEARCH&ppt=sp&ppn=sp&qH=31097073ba92931e">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/k70spzk0/jean/g/y/y/30-hljn000880-highlander-original-imafpchpxn6usyb3.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Slim Men Blue Jeans</h1>
+      <p class="price">@456</p>
+      <p><a
+          href="https://www.flipkart.com/highlander-slim-men-blue-jeans/p/itmfdq4m36rf7yar?pid=JEAFDPYZKRSUJZGC&lid=LSTJEAFDPYZKRSUJZGCJTD0QE&marketplace=FLIPKART&q=men+jeans&store=clo%2Fvua%2Fk58%2Fi51&srno=s_1_25&otracker=search&otracker1=search&fm=Search&iid=8fcef843-cc10-4644-b0aa-095a195ddc6a.JEAFDPYZKRSUJZGC.SEARCH&ppt=sp&ppn=sp&qH=f9dde838df779821">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/krkyt8w0/jean/g/h/p/30-hljn001469-highlander-original-imag5c6bm2xppdye.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Skinny Men Dark Blue Jeans</h1>
+      <p class="price">@649</p>
+      <p><a
+          href="https://www.flipkart.com/highlander-tapered-fit-men-grey-jeans/p/itm5619bc2220501?pid=JEAG5C8U3NY9DGCX&lid=LSTJEAG5C8U3NY9DGCXGHT8XU&marketplace=FLIPKART&fm=productRecommendation%2Fsimilar&iid=en_fomgMuoxz0Jaehf4w3fQxC4erT14ni6xnmRH8VDIk65K50ysww9azlO6pMivr0AxBsrqjqCwd6vs9aCEuH2JMQ%3D%3D&ppt=pp&ppn=pp&ssid=a9hx0rt5280000001648634715956&otracker=pp_reco_Similar%2BProducts_2_32.productCard.PMU_HORIZONTAL_HIGHLANDER%2BTapered%2BFit%2BMen%2BGrey%2BJeans_220532074_productRecommendation%2Fsimilar_1&otracker1=pp_reco_PINNED_productRecommendation%2Fsimilar_Similar%2BProducts_GRID_productCard_cc_2_NA_view-all&cid=220532074">Add
+          to Cart</a></p>
+    </div>
+
+
+
+
+    <div id="women" class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/knni7ww0/top/t/m/w/s-dmp300-dmp-fashion-original-imag2a5qmkgfrgek.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Casual Regular Sleeves Embroidered Women Light Blue Top</h1>
+      <p class="price">@280</p>
+      <p><a
+          href="https://www.flipkart.com/dmp-fashion-casual-3-4-sleeve-embroidered-women-light-blue-top/p/itm581d4660230ac?pid=TOPG2A5QZX8AGX8K&lid=LSTTOPG2A5QZX8AGX8KEJQ1VA&marketplace=FLIPKART&q=women+tops&store=clo%2Fash%2Fohw%2F36j&srno=s_1_11&otracker=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&fm=search-autosuggest&iid=8d3c10f5-117b-4c7c-ba19-1b04cad8ddbe.TOPG2A5QZX8AGX8K.SEARCH&ppt=sp&ppn=sp&ssid=17vpnhktc00000001648635382997&qH=e176ea8a70a3f262">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/l071d3k0/top/g/z/v/s-prw-294-prettify-original-imagcf7fghdsgxju.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Casual Regular Sleeves Embroidered Women Pink Top</h1>
+      <p class="price">@399</p>
+      <p><a
+          href="https://www.flipkart.com/prettify-casual-embroidered-women-pink-top/p/itm5e4ee54866fa4?pid=TOPGCF7RKNC9KT9T&lid=LSTTOPGCF7RKNC9KT9THXIFM9&marketplace=FLIPKART&q=women+tops&store=clo%2Fash%2Fohw%2F36j&srno=s_1_20&otracker=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&fm=search-autosuggest&iid=en_%2B%2BcsMj0cWy46jz62whfVsVWiDVrqSPZ6%2BZGxGkNK2N1jORX%2B2rotndoCFxazD1GKdMlMNOYRvXb23pNjrzbNVw%3D%3D&ppt=sp&ppn=sp&ssid=17vpnhktc00000001648635382997&qH=e176ea8a70a3f262">Add
+          to Cart</a></p>
+    </div>
+
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kpcy5jk0/top/8/x/u/xxl-00133-top-dl-fashion-original-imag3m4vybw6gzzr.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Casual Puff Sleeves Solid Women Pink Top</h1>
+      <p class="price">@279</p>
+      <p><a
+          href="https://www.flipkart.com/dl-fashion-casual-full-sleeve-solid-women-pink-top/p/itme0d4fd139c645?pid=TOPG3M4VGQPEHW4W&lid=LSTTOPG3M4VGQPEHW4W1TUXQZ&marketplace=FLIPKART&q=women+tops&store=clo%2Fash%2Fohw%2F36j&srno=s_1_39&otracker=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&fm=search-autosuggest&iid=8d3c10f5-117b-4c7c-ba19-1b04cad8ddbe.TOPG3M4VGQPEHW4W.SEARCH&ppt=sp&ppn=sp&qH=e176ea8a70a3f262">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/klphn680/top/m/h/7/l-nayla-clemira-original-imagyrqgv7djpzqz.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Casual Regular Sleeves Solid Women Dark Green Top</h1>
+      <p class="price">@209</p>
+      <p><a
+          href="https://www.flipkart.com/clemira-casual-short-sleeve-solid-women-dark-green-top/p/itm39ea389fee386?pid=TOPGYRQJZJRMEFYH&lid=LSTTOPGYRQJZJRMEFYHCMA8RF&marketplace=FLIPKART&q=women+tops&store=clo%2Fash%2Fohw%2F36j&srno=s_1_38&otracker=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_3_na_na_na&fm=search-autosuggest&iid=8d3c10f5-117b-4c7c-ba19-1b04cad8ddbe.TOPGYRQJZJRMEFYH.SEARCH&ppt=sp&ppn=sp&qH=e176ea8a70a3f262">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/ktbu6q80/jean/2/e/h/32-straightfit-black-german-club-original-imag6z7ze2b4pah6.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Flared Women Black Jeans</h1>
+      <p class="price">@399</p>
+      <p><a
+          href="https://www.flipkart.com/perfect-outlet-flared-women-black-jeans/p/itma7db87be4c9a2?pid=JEAG6P55RPYE6HRM&lid=LSTJEAG6P55RPYE6HRMQU1MEU&marketplace=FLIPKART&q=women+jeans&store=clo%2Fvua%2Fk58%2F4hp&srno=s_1_26&otracker=AS_QueryStore_OrganicAutoSuggest_1_7_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_7_na_na_na&fm=search-autosuggest&iid=0df49a13-6f5e-4c4c-9898-aa872369316a.JEAG6P55RPYE6HRM.SEARCH&ppt=sp&ppn=sp&ssid=r1p62vb21s0000001648635491708&qH=c3c012742f2a2d05">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/klb78nk0/jean/q/y/i/38-jean-pln-bta-nifty-original-imagygz4hufadp7e.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Skinny Women Blue Jeans</h1>
+      <p class="price">@399</p>
+      <p><a
+          href="https://www.flipkart.com/nifty-skinny-women-blue-jeans/p/itmf3vzyujdzeph9?pid=JEAEQ8FDPGZ8DMGS&lid=LSTJEAEQ8FDPGZ8DMGS8XCL6B&marketplace=FLIPKART&q=women+jeans&store=clo%2Fvua%2Fk58%2F4hp&srno=s_1_14&otracker=AS_QueryStore_OrganicAutoSuggest_1_7_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_7_na_na_na&fm=search-autosuggest&iid=0df49a13-6f5e-4c4c-9898-aa872369316a.JEAEQ8FDPGZ8DMGS.SEARCH&ppt=sp&ppn=sp&qH=c3c012742f2a2d05">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kflftzk0-0/trouser/d/8/c/m-kslpant6001-kassually-original-imafwyf69jfntfvg.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Flared Women Blue Polycotton Trousers</h1>
+      <p class="price">@599</p>
+      <p><a
+          href="https://www.flipkart.com/kassually-flared-women-blue-trousers/p/itmf9wmku6x9g85x?pid=TROF9WCF6ZA5JVZP&lid=LSTTROF9WCF6ZA5JVZPOJCJNT&marketplace=FLIPKART&q=women+loose+bottom+wear&store=clo%2Fvua%2Fmle%2F8ie&srno=s_1_3&otracker=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_ps&otracker1=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_ps&fm=search-autosuggest&iid=934199be-39d0-4a00-a021-84bcbb602567.TROF9WCF6ZA5JVZP.SEARCH&ppt=sp&ppn=sp&ssid=qanaoccibk0000001648635529947&qH=aa89d31e65b5d12a">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img
+        src="https://rukminim2.flixcart.com/image/880/1056/kzhbfrk0/jean/5/g/t/34-f610p5005-rea-lize-original-imagbhe2xg36fzgq.jpeg?q=50"
+        style="width: 100%;">
+      <h1>Jogger Fit Women Grey Jeans</h1>
+      <p class="price">@870</p>
+      <p><a
+          href="https://www.flipkart.com/rea-lize-jogger-fit-women-grey-jeans/p/itm3815548db4b75?pid=JEAGBHE38PH23DAB&lid=LSTJEAGBHE38PH23DABHLEAVU&marketplace=FLIPKART&q=women+jeans&store=clo%2Fvua%2Fk58%2F4hp&srno=s_1_23&otracker=AS_QueryStore_OrganicAutoSuggest_2_7_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_2_7_na_na_na&fm=search-autosuggest&iid=cd3cea81-8c51-4afe-95b3-6c81d6e4edc4.JEAGBHE38PH23DAB.SEARCH&ppt=sp&ppn=sp&ssid=7ixzz51m5s0000001648635913259&qH=c3c012742f2a2d05">Add
+          to Cart</a></p>
+    </div>
+
+
+
+
+
+
+    <div id="mob" class="card"><img src="https://m.media-amazon.com/images/I/71yTvU9VgdL._SX679_.jpg"
+        style="width: 100%;">
+      <h1>Redmi Note 11</h1>
+      <p class="price">@13999</p>
+      <p><a
+          href="https://www.amazon.in/Redmi-Storage-Display-Qualcomm%C2%AE-SnapdragonTM/dp/B09QS8V5N8/ref=sr_1_12?crid=31MT6ZBENPWAL&keywords=k20+pro&qid=1648643479&sprefix=k20+pro%2Caps%2C407&sr=8-12">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61PDbUd1VaL._SX679_.jpg" style="width: 100%;">
+      <h1>One Plus 9R 5G</h1>
+      <p class="price">@36999</p>
+      <p><a
+          href="https://www.amazon.in/Test-Exclusive_2020_1178-Multi-3GB-Storage/dp/B089MTJVLD/ref=sr_1_1?crid=1FFA04SXIDLWB&keywords=oneplus%2B9r&qid=1648643336&sprefix=one%2Bplus%2B9%2Caps%2C357&sr=8-1&th=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61vc1+N5evS._SX679_.jpg" style="width: 100%;">
+      <h1>OnePlus Nord 2 5G </h1>
+      <p class="price">@29999</p>
+      <p><a
+          href="https://www.amazon.in/OnePlus-Nord-Blue-128GB-Storage/dp/B097RD2JX8/ref=sr_1_1?crid=2EXFCQ7BB9MT&keywords=oneplus+nord+2&qid=1648643419&sprefix=oneplus+n%2Caps%2C825&sr=8-1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61NC3RS4RXL._SX679_.jpg" style="width: 100%;">
+      <h1>One Plus 9RT 5G</h1>
+      <p class="price">@46999</p>
+      <p><a
+          href="https://www.amazon.in/OnePlus-Silver-Storage-hands-free-capable/dp/B09N3YP13B/ref=sxin_13_recs_zoco_bs?crid=27XMDI730059O&cv_ct_cx=oneplus&keywords=oneplus&pd_rd_i=B09N3YP13B&pd_rd_r=231c2694-385d-4a3b-9e49-b0e12dbfcda4&pd_rd_w=eefFw&pd_rd_wg=RxEll&pf_rd_p=33bb599f-e6c1-4925-8617-96ef3c15bb46&pf_rd_r=SFK55D8AJ74CN434VPB1&qid=1648644442&sprefix=oneplus%2Bnord%2B2%2Caps%2C566&sr=1-2-015bdd4d-08ee-43f0-be93-e5e915d80668&th=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/81o-H5PLmeL._SX679_.jpg" style="width: 100%;">
+      <h1>Samsung Galaxy S21 FE 5G</h1>
+      <p class="price">@54999</p>
+      <p><a
+          href="https://www.amazon.in/Samsung-Galaxy-White-128GB-Storage/dp/B09P8GT6QC/ref=sr_1_1_sspa?crid=3CVW56YCQ5OPB&keywords=samsung+s&qid=1648644523&s=electronics&sprefix=samsung+s%2Celectronics%2C307&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFBM0U2MFJTUzhSSjYmZW5jcnlwdGVkSWQ9QTA2MDg2MzIzVURYQ1lDNE43VlRVJmVuY3J5cHRlZEFkSWQ9QTA2MjEwOTJMS1dSNkw1T0c1Rk4md2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71lx0qz7rFL._SX679_.jpg" style="width: 100%;">
+      <h1>Redmi Note 11 Pro + 5G </h1>
+      <p class="price">@20999</p>
+      <p><a
+          href="https://www.amazon.in/Redmi-Stealth-Additional-Exchange-Available/dp/B09T39K9YL/ref=sr_1_2?crid=2ZV9UNN0D8S39&keywords=redmi+11+pro&qid=1648644822&s=electronics&sprefix=redmi+11%2Celectronics%2C368&sr=1-2">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71fVoqRC0wL._SX679_.jpg" style="width: 100%;">
+      <h1>Apple iPhone 12 (128GB)</h1>
+      <p class="price">@59999</p>
+      <p><a
+          href="https://www.amazon.in/New-Apple-iPhone-12-128GB/dp/B08L5WD9D6/ref=sr_1_6?crid=2BVOA3RUQECWW&keywords=iphone&qid=1648644645&s=electronics&sprefix=ip%2Celectronics%2C336&sr=1-6 ">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71xb2xkN5qL._SX679_.jpg" style="width: 100%;">
+      <h1>Apple iPhone 13 (128GB)</h1>
+      <p class="price">@74999</p>
+      <p><a
+          href="https://www.amazon.in/Apple-iPhone-13-128GB-Blue/dp/B09G9BL5CP/ref=sr_1_7?crid=2BVOA3RUQECWW&keywords=iphone&qid=1648644645&s=electronics&sprefix=ip%2Celectronics%2C336&sr=1-7">Add
+          to Cart</a></p>
+    </div>
+
+
+
+
+    <!-- <div id="tab" class="card"><img src="" style="width: 100%;">
+      <h1></h1>
+      <p class="price">@</p>
+      <p><a href="#">Add to Cart</a></p>
+    </div>
+    <div class="card"><img src="" style="width: 100%;">
+      <h1></h1>
+      <p class="price">@</p>
+      <p><a href="#">Add to Cart</a></p>
+    </div>
+    <div class="card"><img src="" style="width: 100%;">
+      <h1></h1>
+      <p class="price">@</p>
+      <p><a href="#">Add to Cart</a></p>
+    </div>
+    <div class="card"><img src="" style="width: 100%;">
+      <h1></h1>
+      <p class="price">@</p>
+      <p><a href="#">Add to Cart</a></p>
+    </div>
+    <div class="card"><img src="" style="width: 100%;">
+      <h1></h1>
+      <p class="price">@</p>
+      <p><a href="#">Add to Cart</a></p>
+    </div>
+    <div class="card"><img src="" style="width: 100%;">
+      <h1></h1>
+      <p class="price">@</p>
+      <p><a href="#">Add to Cart</a></p>
+    </div>
+    <div class="card"><img src="" style="width: 100%;">
+      <h1></h1>
+      <p class="price">@</p>
+      <p><a href="#">Add to Cart</a></p>
+    </div>
+    <div class="card"><img src="" style="width: 100%;">
+      <h1></h1>
+      <p class="price">@</p>
+      <p><a href="#">Add to Cart</a></p>
+    </div> -->
+
+
+
+
+
+    <div id="lap" class="card"><img src="https://m.media-amazon.com/images/I/71Z1Ccm4MnL._SX679_.jpg"
+        style="width: 100%;">
+      <h1>HP OMEN AMD Ryzen 5-4600H</h1>
+      <p class="price">@72990</p>
+      <p><a
+          href="https://www.amazon.in/HP-15-6-inch-5-4600H-Windows-15-en0001AX/dp/B08CGKP829/ref=sr_1_2?crid=2AUESPLZKKLH4&keywords=hp%2Bomen&qid=1648645161&s=electronics&sprefix=hp%2Bomen%2Celectronics%2C373&sr=1-2&th=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/41gqIH8LN2L.jpg" style="width: 100%;">
+      <h1>Acer Predator Helios 300</h1>
+      <p class="price">@1,07,990</p>
+      <p><a
+          href="https://www.amazon.in/Acer-Predator-Helios-Gaming-Laptop/dp/B098LKKRCR/ref=sr_1_4?keywords=acer+predator&qid=1648645134&s=electronics&sprefix=acer+pre%2Celectronics%2C297&sr=1-4">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71h7F81EBoS._SX679_.jpg" style="width: 100%;">
+      <h1>HP Victus AMD Ryzen 5 5600H</h1>
+      <p class="price">@64990</p>
+      <p><a
+          href="https://www.amazon.in/HP-RX5500M-Graphics-Flicker-16-e0162AX/dp/B098QBT5KT/ref=sr_1_1_sspa?keywords=laptop&qid=1648645006&s=electronics&sprefix=lap%2Celectronics%2C337&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzNTJHQ01SR0g4M1NHJmVuY3J5cHRlZElkPUEwOTYxMzUxMTBaQlg4U0tSVTZETCZlbmNyeXB0ZWRBZElkPUEwNzc3MTAyMzIzMDg4TFdRTFpMSSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61p3lA4N3uL._SX522_.jpg" style="width: 100%;">
+      <h1>Lenovo Legion 5 Core i5-10300H </h1>
+      <p class="price">@73000</p>
+      <p><a
+          href="https://www.amazon.in/dp/B097TYRFJJ/ref=sspa_dk_detail_5?psc=1&pd_rd_i=B097TYRFJJ&pd_rd_w=kAdNs&pf_rd_p=4e9225d2-7473-4eb0-95d5-670190275218&pd_rd_wg=ajE4m&pf_rd_r=6RMQNAF6ADB9QYTYV4E4&pd_rd_r=88df7966-b91f-4f8b-beed-3cfa7e3f58ad&s=electronics&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzMkM4Rjg4MTlRU0JJJmVuY3J5cHRlZElkPUEwMzQwNjc3MkxLUzdZUFpYVkQ3QyZlbmNyeXB0ZWRBZElkPUExMDAwNTg3M0tBT1M0Uk05MDBTUCZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/81RHHnGydgL._SX679_.jpg" style="width: 100%;">
+      <h1>Mi Notebook Ultra</h1>
+      <p class="price">@59990</p>
+      <p><a
+          href="https://www.amazon.in/dp/B098XLXDRS/ref=sspa_dk_detail_1?pf_rd_p=4e9225d2-7473-4eb0-95d5-670190275218&pd_rd_wg=ajE4m&pf_rd_r=6RMQNAF6ADB9QYTYV4E4&pd_rd_w=kAdNs&pd_rd_r=88df7966-b91f-4f8b-beed-3cfa7e3f58ad&s=electronics&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzM0NVV0NETFBCQjhMJmVuY3J5cHRlZElkPUEwNTUzNzk4MjZJWUNPNk00VDZYVCZlbmNyeXB0ZWRBZElkPUEwMTE3NzIxMUFEWlBUVlhBTlg5TSZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&th=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71evs2WKJjS._SX522_.jpg" style="width: 100%;">
+      <h1>Acer Nitro 5 AN5</h1>
+      <p class="price">@69990</p>
+      <p><a
+          href="https://www.amazon.in/Acer-Generation-15-6-inch-Graphics-AN515-56/dp/B091GPC1VD/ref=sr_1_16_sspa?keywords=laptop&qid=1648645006&s=electronics&sprefix=lap%2Celectronics%2C337&sr=1-16-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzNTJHQ01SR0g4M1NHJmVuY3J5cHRlZElkPUEwOTYxMzUxMTBaQlg4U0tSVTZETCZlbmNyeXB0ZWRBZElkPUEwMDgxMzMzMUFQUDJXUEpLR0o4UyZ3aWRnZXROYW1lPXNwX210ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/914o5xV1+8L._SX679_.jpg" style="width: 100%;">
+      <h1>ASUS TUF Gaming F15</h1>
+      <p class="price">@60990</p>
+      <p><a
+          href="https://www.amazon.in/ASUS-i5-10300H-Graphics-Fortress-FX566LH-HN257T/dp/B08CRMTKMK/ref=sr_1_29_sspa?keywords=laptop&qid=1648645006&s=electronics&sprefix=lap%2Celectronics%2C337&sr=1-29-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzNTJHQ01SR0g4M1NHJmVuY3J5cHRlZElkPUEwOTYxMzUxMTBaQlg4U0tSVTZETCZlbmNyeXB0ZWRBZElkPUEwNTc3MDYxMzJENk9NUVFFUkZZVCZ3aWRnZXROYW1lPXNwX2J0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/611VHOvjkES._SX679_.jpg" style="width: 100%;">
+      <h1>HP Pavilion Gaming </h1>
+      <p class="price">@67400</p>
+      <p><a
+          href="https://www.amazon.in/HP-Pavilion-15-6-inch-Graphics-15-dk1514TX/dp/B09DY8BGSY/ref=sr_1_30_sspa?keywords=laptop&qid=1648645006&s=electronics&sprefix=lap%2Celectronics%2C337&sr=1-30-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzNTJHQ01SR0g4M1NHJmVuY3J5cHRlZElkPUEwOTYxMzUxMTBaQlg4U0tSVTZETCZlbmNyeXB0ZWRBZElkPUEwMDUxMzQ5MkJEVzBSQjZZTzFITiZ3aWRnZXROYW1lPXNwX2J0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=">Add
+          to Cart</a></p>
+    </div>
+
+
+
+    <div id="tv" class="card"><img src="https://m.media-amazon.com/images/I/71KVQa4N4zL._SX679_.jpg"
+        style="width: 100%;">
+      <h1>LG 139 cm (55 inches) 4K Ultra HD Smart OLED TV</h1>
+      <p class="price">@99999</p>
+      <p><a
+          href="https://www.amazon.in/LG-inches-Ultra-55BXPTA-Silver/dp/B08J97B3LN/ref=sr_1_11?crid=3I2J4SYP62DPU&keywords=smart+tv+realme&qid=1648645913&refinements=p_89%3ALG%7CMI&rnid=3837712031&s=electronics&sprefix=smart+tv+re%2Caps%2C384&sr=1-11">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61V7cDH8AAS._SX522_.jpg" style="width: 100%;">
+      <h1>Mi(50 Inches) 4K Ultra HD Android Smart LED TV</h1>
+      <p class="price">@35999</p>
+      <p><a
+          href="https://www.amazon.in/Mi-125-7-Inches-Ultra-Android/dp/B07X841RGL/ref=sr_1_6?crid=3I2J4SYP62DPU&keywords=smart+tv+realme&qid=1648645898&refinements=p_89%3AMI&rnid=3837712031&s=electronics&sprefix=smart+tv+re%2Caps%2C384&sr=1-6">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61GwJAhftvS._SX679_.jpg" style="width: 100%;">
+      <h1>Samsung (58 inches) Crystal 4K Pro Series Ultra HD Smart LED TV</h1>
+      <p class="price">@56490</p>
+      <p><a
+          href="https://www.amazon.in/Samsung-inches-Crystal-Ultra-UA58AUE70AKLXL/dp/B091GYMFFV/ref=sr_1_9?crid=1ZIAF2ITKMTBF&keywords=smart+tv+samsung&qid=1648645839&sprefix=smart+tv+sam%2Caps%2C336&sr=8-9">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/91Pij5DqU1L._SX522_.jpg" style="width: 100%;">
+      <h1>Sony Bravia(55 inches) 4K Ultra HD Google TV</h1>
+      <p class="price">@74990</p>
+      <p><a
+          href="https://www.amazon.in/Sony-Bravia-inches-KD-55X80AJ-Compatibility/dp/B0918T1SDK/ref=sr_1_6?crid=2KWORSC7V1NZZ&keywords=smart+tv+sony&qid=1648645796&sprefix=smart+tv+s%2Caps%2C341&sr=8-6">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71nFNnKNt7L._SX522_.jpg" style="width: 100%;">
+      <h1>Samsung (43 Inches) Full HD LED Smart TV</h1>
+      <p class="price">@31990</p>
+      <p><a
+          href="https://www.amazon.in/Samsung-Inches-Wondertainment-UA32T4340BKXXL-Glossy/dp/B086R98PKS/ref=sr_1_10?crid=35JRWLLTL04RS&keywords=smart%2Btv&qid=1648645682&sprefix=smart%2Btv%2Caps%2C337&sr=8-10&th=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61V7cDH8AAS._SX522_.jpg" style="width: 100%;">
+      <h1>Mi (50 Inches) 4K Ultra HD Android Smart LED TV</h1>
+      <p class="price">@35990</p>
+      <p><a
+          href="https://www.amazon.in/108-Inches-Ultra-Android-Black/dp/B07X841RGL/ref=sr_1_15?crid=35JRWLLTL04RS&keywords=smart%2Btv&qid=1648645682&sprefix=smart%2Btv%2Caps%2C337&sr=8-15&th=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71vZLIfj5yS._SX522_.jpg" style="width: 100%;">
+      <h1>OnePlus (43 inches)Full HD LED Smart Android TV</h1>
+      <p class="price">@25499</p>
+      <p><a
+          href="https://www.amazon.in/OnePlus-inches-Smart-Android-43Y1/dp/B08B42HNH7/ref=sr_1_7?crid=35JRWLLTL04RS&keywords=smart%2Btv&qid=1648645682&sprefix=smart%2Btv%2Caps%2C337&sr=8-7&th=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/81I1sw-FBgL._SX522_.jpg" style="width: 100%;">
+      <h1>LG 139.7 cm (55 inches) 4K Ultra HD Smart LED TV</h1>
+      <p class="price">@48999</p>
+      <p><a
+          href="https://www.amazon.in/LG-139-7-inches-Ultra-55UP7500PTZ/dp/B0967P677T/ref=sr_1_11_sspa?crid=35JRWLLTL04RS&keywords=smart+tv&qid=1648645682&sprefix=smart+tv%2Caps%2C337&sr=8-11-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzUEg4TU9JMVU1TDU4JmVuY3J5cHRlZElkPUEwMjY0MDkyMzAzUDlMNERZUUxNMCZlbmNyeXB0ZWRBZElkPUEwMDAwODkwMlU1UlJYMkhRSU1MTSZ3aWRnZXROYW1lPXNwX210ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=">Add
+          to Cart</a></p>
+    </div>
+
+
+
+    <div id="un" class="card"><img src="https://m.media-amazon.com/images/I/61Yy770NgzL._UY741_.jpg"
+        style="width: 100%;">
+      <h1>Van Heusen Men's Cotton Boxer Brief</h1>
+      <p class="price">@719</p>
+      <p><a
+          href="https://www.amazon.in/Van-Heusen-Cotton-8907566752829_10031_Medium_Anthramel-Pureblack/dp/B073WB72RW/ref=sr_1_9?keywords=men%2Bbriefs&qid=1648647911&sprefix=men%2Bbr%2Caps%2C405&sr=8-9&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61EuoIfU4OL._UY741_.jpg" style="width: 100%;">
+      <h1>Van Heusen Men's Antibacterial Brief</h1>
+      <p class="price">@687</p>
+      <p><a
+          href="https://www.amazon.in/Van-Heusen-8907566752188_10004_Medium_Pureblack-Anthramel-Darknavy/dp/B073WBN2H2/ref=sr_1_13?keywords=men%2Bbriefs&qid=1648647911&sprefix=men%2Bbr%2Caps%2C405&sr=8-13&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71v1jEZm6jL._UY741_.jpg" style="width: 100%;">
+      <h1>Fashiol Women Cotton Brief</h1>
+      <p class="price">@204</p>
+      <p><a
+          href="https://www.amazon.in/dp/B08HRT6Y1S/ref=sspa_dk_detail_7?psc=1&pd_rd_i=B08HRT6Y1S&pd_rd_w=MrgIM&pf_rd_p=ad187061-7416-454e-93f2-b0d48b1c4cb0&pd_rd_wg=TKn9o&pf_rd_r=ZR879EGWTW0XXXTQ1556&pd_rd_r=2359a57f-fd3d-4e34-8404-3c1e6ad12169&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExR0hDRFBMMFozMFM4JmVuY3J5cHRlZElkPUEwNDk1NDc2MTdEVE05MEU1Sjk5OSZlbmNyeXB0ZWRBZElkPUEwNjQ3NTYwMVZHQzdGVk8ySU5YTiZ3aWRnZXROYW1lPXNwX2RldGFpbF90aGVtYXRpYyZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/91mMZH+2GpL._UX679_.jpg" style="width: 100%;">
+      <h1>Van Heusen Woman Brief</h1>
+      <p class="price">@499</p>
+      <p><a
+          href="https://www.amazon.in/Van-Heusen-Hipster-11102_Light-Assorted_XXL/dp/B07J5M4QQW/ref=sr_1_2_sspa?crid=1GFMXW6OFBAEL&keywords=women+briefs+underwear&qid=1648647984&sprefix=wmen+briefs%2Caps%2C320&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzT1BNQzBVNUNBWUlPJmVuY3J5cHRlZElkPUEwNTc4MDI4M0lXVVBCTVFHREVaUiZlbmNyeXB0ZWRBZElkPUEwMjI5NzkxM1BISUQ5MUIwSUpJSyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71aIozSXZvL._UX569_.jpg" style="width: 100%;">
+      <h1>Van Heusen Men's Vest Cotton White</h1>
+      <p class="price">@431</p>
+      <p><a
+          href="https://www.amazon.in/U-S-Polo-Assn-Solid-I661-001-P3_White_Large/dp/B07S15TSGG/ref=sr_1_26?crid=1O3XGHPRPZHNO&keywords=men%2Bvest&qid=1648648060&sprefix=men%2Bvest%2Caps%2C322&sr=8-26&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/81IjaM7JS2L._UY741_.jpg" style="width: 100%;">
+      <h1>Jockey Men's Vest</h1>
+      <p class="price">@310</p>
+      <p><a
+          href="https://www.amazon.in/Jockey-Mens-Cotton-8901326106426_FP04_Medium_Grey-Melange/dp/B01CP5V6NC/ref=sr_1_16?crid=1O3XGHPRPZHNO&keywords=men%2Bvest&qid=1648648060&sprefix=men%2Bvest%2Caps%2C322&sr=8-16&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/81SVysWR1GL._UY741_.jpg" style="width: 100%;">
+      <h1>Women's Polyester & Cotton Bra</h1>
+      <p class="price">@349</p>
+      <p><a
+          href="https://www.amazon.in/INKURV-Womens-Padded-Non_Wired-Shaping/dp/B0774T24KV/ref=sr_1_4_sspa?crid=27TKV6WN8R965&keywords=bra&qid=1648648107&sprefix=bra%2Caps%2C297&sr=8-4-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExV0xXT0RWQTUwVUkmZW5jcnlwdGVkSWQ9QTA2OTM3NTVRRkJNWk5YTlA5S1cmZW5jcnlwdGVkQWRJZD1BMDcyMzA5ODI3SDhYMTRTSEM1Wlcmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71JMYIfINuL._UY741_.jpg" style="width: 100%;">
+      <h1>Women's Cotton Non-Wired Non-Padded Everyday Bra </h1>
+
+      <p class="price">@263</p>
+      <p><a
+          href="https://www.amazon.in/Clovia-Womens-Padded-Wired-BR0584P1136B_Green/dp/B01G8YP5YM/ref=sr_1_42?crid=27TKV6WN8R965&keywords=bra&qid=1648648107&sprefix=bra%2Caps%2C297&sr=8-42&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+
+
+
+    <div id="ft" class="card"><img src="https://m.media-amazon.com/images/I/71DBB3iu9qL._UY695_.jpg"
+        style="width: 100%;">
+      <h1>Nike Women Multisport Training Shoes</h1>
+      <p class="price">@4050</p>
+      <p><a
+          href="https://www.amazon.in/Training-Shoes-Black-898479-001-7-5-Regular/dp/B01LPGRZX2/ref=sr_1_1?crid=1F5Z3UCZPDZHG&keywords=nike%2Bshoes&qid=1648649261&sprefix=nikeshoes%2Caps%2C316&sr=8-1&th=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/61WZDJNfOJL._UY695_.jpg" style="width: 100%;">
+      <h1>Nike Men's Air Zoom Pegasus 38 Running Shoe</h1>
+      <p class="price">@11665</p>
+      <p><a
+          href="https://www.amazon.in/Nike-Pegasus-Running-Shoes-Crimson-Off/dp/B09QKW3D1K/ref=sr_1_3?crid=1F5Z3UCZPDZHG&keywords=nike+shoes&qid=1648649261&sprefix=nikeshoes%2Caps%2C316&sr=8-3">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71-ftdKNt3L._UX695_.jpg" style="width: 100%;">
+      <h1>Puma Unisex-Adult Fuser Idp Closed Shoe</h1>
+      <p class="price">@2379</p>
+      <p><a
+          href="https://www.amazon.in/Puma-Unisexs-Shadow-Limepunch-Running-37483302/dp/B085YB2LWG/ref=sxin_24_slsr_d_i_fsnewarrivals_fa_0_B085YB2LWG?crid=29YTSV1Y72ZCL&cv_ct_cx=puma+shoes&keywords=puma+shoes&pd_rd_i=B085YB2LWG&pd_rd_r=02afdea2-df8b-4143-ba18-125cc19146db&pd_rd_w=dmZHf&pd_rd_wg=FQ3rM&pf_rd_p=2e3e308a-190c-4e5e-96c1-95a42a8173d9&pf_rd_r=23JYQ05TW68WARZ7ENXG&psc=1&qid=1648649297&sprefix=puma+shoes%2Caps%2C335&sr=1-1-5b2ee5ec-0735-4782-9f3a-9d21a55133d0">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/814SCUSrxdL._UX695_.jpg" style="width: 100%;">
+      <h1>Puma Unisex Sf Drift Cat 5 Ultra Sneakers</h1>
+      <p class="price">@2799</p>
+      <p><a
+          href="https://www.amazon.in/Puma-Unisex-Drift-Ultra-Sneakers/dp/B01N01X5HQ/ref=sr_1_25?crid=29YTSV1Y72ZCL&keywords=puma%2Bshoes&qid=1648649297&sprefix=puma%2Bshoes%2Caps%2C335&sr=8-25&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/71Dh0zq4oZS._UX695_.jpg" style="width: 100%;">
+      <h1>Adidas Men's Blazerunner M Running Shoes</h1>
+      <p class="price">@1899</p>
+      <p><a
+          href="https://www.amazon.in/Adidas-Gresix-Leggld-Cblack-Running/dp/B0928PDNDL/ref=sr_1_11?crid=3CZTXDSJZYVE2&keywords=adidas%2Bshoes&qid=1648649367&sprefix=adidas%2Caps%2C325&sr=8-11&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/710tjzp0xlL._UX695_.jpg" style="width: 100%;">
+      <h1>Adidas neo Men's Vs Set Sneakers</h1>
+      <p class="price">@1855</p>
+      <p><a
+          href="https://www.amazon.in/adidas-FTWWHT-CONAVY-DOVGRY-Running/dp/B0928M96FK/ref=sr_1_8?crid=3CZTXDSJZYVE2&keywords=adidas%2Bshoes&qid=1648649367&sprefix=adidas%2Caps%2C325&sr=8-8&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/81LgxYSOU9L._UX695_.jpg" style="width: 100%;">
+      <h1>Reebok Women's Stride Runner Shoes</h1>
+      <p class="price">@1215</p>
+      <p><a
+          href="https://www.amazon.in/Reebok-Womens-Quartz-Met-Shoes/dp/B096N69R19/ref=sr_1_8?crid=2YF06570BQ80O&keywords=reebok%2Bshoes&qid=1648649421&sprefix=reeb%2Caps%2C338&sr=8-8&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+    <div class="card"><img src="https://m.media-amazon.com/images/I/81mwdLvZUqL._UX695_.jpg" style="width: 100%;">
+      <h1>Skechers Women's City Pro-Glow on Sneaker</h1>
+      <p class="price">@2254</p>
+      <p><a
+          href="https://www.amazon.in/Skechers-Womens-Fashion-Sneaker-Link/dp/B07VXK64PH/ref=sr_1_19?crid=2YAVGC5DLYHOH&keywords=sketchershoes%2Bshoes%2Bfor%2Bwomen&qid=1648649458&sprefix=sket%2Caps%2C323&sr=8-19&th=1&psc=1">Add
+          to Cart</a></p>
+    </div>
+
+  </div>
+
+
+  <div class="cpyri8">
+    <p>All rights Reserved by One Stop ShopIn <br> <span>Copyright@2022</span></p>
+    <a class="pp" href="http://127.0.0.1:5500/Project/pr-privacy.html"> Privacy Policy</a>
+  </div>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+    function myFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("mySearch");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myMenu");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+
+   
+
+  </script>
+
+</body>
+
+</html>

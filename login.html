@@ -1,0 +1,221 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Login Page</title>
+  <link rel="icon" href="mk.jpg">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body,
+  html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightcyan;
+  }
+
+  .bg-img {
+    background-image: url("https://source.unsplash.com/collection/190727/1600x900");
+    min-height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+
+  .container {
+    position: absolute;
+    right: 0;
+    margin: 30px;
+    max-width: 350px;
+    padding: 16px;
+    background-color: rgb(246, 246, 252);
+    border-radius: 15px;
+  }
+
+
+  input[type=text],
+  input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: rgb(255, 244, 223);
+    opacity: 0.8;
+  }
+
+  input[type=text]:focus,
+  input[type=password]:focus {
+    background-color: burlywood;
+    outline: none;
+  }
+
+  label {
+    animation: flicker linear infinite 2s;
+  }
+
+
+  #btn1 {
+    background-color: rgb(195, 255, 97);
+    color: red;
+    padding: 16px 20px;
+    border: 1px solid black;
+    border-radius: 14px;
+    cursor: pointer;
+    width: 38%;
+    opacity: 0.8;
+  }
+
+  #btn2 {
+    position: relative;
+    background-color: rgb(195, 255, 97);
+    color: red;
+    padding: 16px 20px;
+    border: 1px solid black;
+    border-radius: 14px;
+    cursor: pointer;
+    width: 38%;
+    float: right;
+    opacity: 0.8;
+  }
+
+  .btn:hover {
+    opacity: 1;
+    padding: 16px;
+    font-size: 1.1rem;
+
+
+  }
+
+
+  h1 {
+    text-align: center;
+  }
+
+  a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+  }
+
+  span {
+    font-size: 12px;
+  }
+
+  .social-container a {
+    border: 1px solid khaki;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+  }
+
+  #navbar {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  #navbar a {
+    padding: 14px 16px;
+    font-size: 18px;
+  }
+
+  #navbar a:hover {
+    background-color: rgb(140, 37, 224);
+    color: beige;
+    border: 2px solid yellow;
+    border-radius: 15px;
+    padding: 18px;
+    font-size: 1.1rem;
+  }
+
+  #text {
+    display: none;
+    color: red;
+  }
+</style>
+</head>
+
+<body>
+  <div id="navbar">
+    <a href="http://127.0.0.1:5500/Project/home.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="http://127.0.0.1:5500/Project/PR%20about.html"><i class="fa fa-fw fa-user"></i> About</a>
+    <a href="http://127.0.0.1:5500/Project/pr-FAQ.html"><i class="fa fa-fw fa-question"></i> FAQ's</a>
+    <a href="http://127.0.0.1:5500/Project/PR-contact.html"><i class="fa fa-fw fa-phone"></i> Contact</a>
+  </div>
+
+  <div class="bg-img">
+    <form action="" class="container" id="m1">
+      <h1>Login</h1>
+      <div class="social-container">
+        <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en-GB&flowName=GlifWebSignIn&flowEntry=SignUp"
+          class="social"><i class="fab fa fa-google fa-2x"></i></a>
+        <a href="https://www.facebook.com/login" class="social"><i class="fa fa-facebook fa-2x"></i></a>
+        <a href="https://twitter.com/" class="social"><i class="fab fa fa-twitter fa-2x"></i></a>
+
+      </div>
+      <span><b>OR</b> &nbsp; Use your Account</span><br><br>
+      <label for="userid"><b>Username</b></label>
+      <input type="text" placeholder="Your Username" name="userid" id="userid" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input id="myInput" type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      <p id="text">WARNING! Caps lock is ON.</p>
+      <input type="checkbox" name="me" id="me">
+      <span>Remember Me</span><br><br>
+      <input type="submit" value="Reset" onclick="clearFunc()" class="btn" id="btn1">
+      <input type="submit" value="Login" class="btn" id="btn2" onClick="login()">
+      <h6>Forgot Password ? <a href="http://127.0.0.1:5500/Project/reset.html" target="_blank">Reset Now
+          !</a></h6>
+      <h6>Don't have an Account ? <a href="http://127.0.0.1:5500/Project/register.html" target="_blank">Register Now
+          !</a></h6>
+      <!-- <button type="submit" class="btn">Login</button> -->
+
+    </form>
+  </div>
+
+  <script>
+    function login() {
+      var uname = document.getElementById("userid").value;
+      var pwd = document.getElementById("psw").value;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      if (uname == '') {
+        alert("Please enter user name.");
+      }
+      else if (pwd == '') {
+        alert("Enter the password");
+      }
+      else if (pwd.length < 6 || pwd.length > 10) {
+        alert("Password min is 6 and max length is 10.");
+      }
+      else {
+        alert('Thank You for Login & You are Redirecting to the Website');
+        //redirect frm here
+        window.location = "";
+      }
+    }
+    function clearFunc() {
+      document.getElementById("userid").value = "";
+      document.getElementById("psw").value = "";
+    }
+
+    var input = document.getElementById("myInput");
+    var text = document.getElementById("text");
+    input.addEventListener("keyup", function (event) {
+
+      if (event.getModifierState("CapsLock")) {
+        text.style.display = "block";
+      } else {
+        text.style.display = "none"
+      }
+    });
+  </script>
+
+</body>
+
+</html>
